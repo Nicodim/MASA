@@ -47,7 +47,7 @@ function randomColor() {
 
 console.log(randomColor());
 
-function srchGoogle() {                                         //Создание функции которая ищет в гугле
+function srchGoogle() {
     var x = colors[colors.length - 1];
     x = x.replace('#','%23');
     window.open('https://www.google.com/search?q='+x);
