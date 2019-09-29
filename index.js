@@ -2,12 +2,13 @@ var btn = document.getElementById('btn');
 var input = document.getElementById('input');
 var list = document.getElementById('list');
 var random = document.getElementById('random');
-
+var srch = document.getElementById('srch');
 var colors = [];
 
 btn.addEventListener('click', getColor);
 input.addEventListener('keyup', inputChange);
 random.addEventListener('click', randomColor);
+srch.addEventListener('click', srchGoogle)
 btn.disabled = true;
 
 function inputChange() {
@@ -40,7 +41,14 @@ function randomColor() {
         def += allowed.charAt(Math.floor((Math.random() * 16) + 1));
     }
     input.value = def;
+    colors.push(def);
     updateList();
 }
 
 console.log(randomColor());
+
+function srchGoogle() {
+    var x = colors[colors.length - 1];
+    x = x.replace('#','%23');
+    window.open('https://www.google.com/search?q='+x);
+}
